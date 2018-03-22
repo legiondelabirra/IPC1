@@ -5,26 +5,25 @@
  */
 package academia;
 
+import accesoaBD.AccesoaBD;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
+import modelo.Alumno;
+import utils.Database;
+import utils.WindowManager;
 
 /**
  *
  * @author Pau Castelló
  */
 public class Academia extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Inicio.fxml"));
-        
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.show();
+        //WindowManager.createAlumnoWindow();
+        for (Alumno a : Database.getInstance().getAllAlumnos()) {
+            System.out.println(a.getDni());
+        }
     }
 
     /**
@@ -33,5 +32,5 @@ public class Academia extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }
