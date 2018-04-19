@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="academia.matriculas.MatriculasController">
+   <center>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="400.0" prefWidth="173.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#borrarMatricula" prefHeight="26.0" prefWidth="78.0" text="Borrar">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#matricular" text="Matricular " />
+         </children>
+      </HBox>
+   </center>
+   <left>
+      <TableView fx:id="tablaAlumnos" prefHeight="400.0" prefWidth="210.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="dniMatricula" prefWidth="94.4000244140625" text="DNI" />
+          <TableColumn fx:id="nombreMatricula" prefWidth="104.79998779296875" text="Nombre" />
+        </columns>
+      </TableView>
+   </left>
+   <right>
+      <TableView fx:id="tablaCursos" prefHeight="400.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="tituloMatricula" prefWidth="208.7999877691269" text="Título" />
+        </columns>
+      </TableView>
+   </right>
+   <padding>
+      <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+   </padding>
+</BorderPane>

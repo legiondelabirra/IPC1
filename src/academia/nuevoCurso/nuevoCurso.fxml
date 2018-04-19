@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="academia.nuevoCurso.NuevoCursoController">
+   <center>
+      <VBox prefHeight="300.0" prefWidth="332.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="318.0" prefWidth="441.0">
+               <children>
+                  <VBox prefHeight="300.0" prefWidth="113.0" spacing="20.0">
+                     <children>
+                        <Label text="Título" />
+                        <Label text="Profesor" />
+                        <Label text="Máximo alumnos" />
+                        <Label text="Fecha inicio" />
+                        <Label text="Fecha fin" />
+                        <Label text="Hora(HH:mm))" />
+                        <Label text="Aula" />
+                     </children>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="288.0" prefWidth="206.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="titulo">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="profesor" />
+                        <TextField fx:id="maxAlumnos" />
+                        <DatePicker fx:id="fechaIni" />
+                        <DatePicker fx:id="fechaFin" />
+                        <TextField fx:id="hora" />
+                        <TextField fx:id="aula" />
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="146.0" prefWidth="526.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="43.0" prefWidth="551.0" spacing="8.0">
+                     <children>
+                        <Label text="Días de la semana">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="43.0" prefWidth="261.0" spacing="1.0">
+                           <children>
+                              <CheckBox fx:id="checkLunes" mnemonicParsing="false" text="L">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </CheckBox>
+                              <CheckBox fx:id="checkMartes" mnemonicParsing="false" text="M">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </CheckBox>
+                              <CheckBox fx:id="checkMiercoles" mnemonicParsing="false" text="X">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                              <CheckBox fx:id="checkJueves" mnemonicParsing="false" text="J">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                              <CheckBox fx:id="checkViernes" mnemonicParsing="false" text="V">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                              <CheckBox fx:id="checkSabado" mnemonicParsing="false" text="S">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                              <CheckBox fx:id="checkDomingo" mnemonicParsing="false" text="D">
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="51.0" prefWidth="475.0" BorderPane.alignment="BOTTOM_CENTER">
+         <children>
+            <Button fx:id="alta" mnemonicParsing="false" onAction="#altaCurso" text="DAR DE ALTA">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="cancelar" mnemonicParsing="false" onAction="#cancelar" text="CANCELAR" />
+         </children>
+      </HBox>
+   </bottom>
+   <padding>
+      <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+   </padding>
+</BorderPane>

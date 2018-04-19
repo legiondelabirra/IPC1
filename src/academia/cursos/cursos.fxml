@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="503.0" prefWidth="634.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="academia.cursos.CursosController">
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="listaCursos" prefHeight="405.0" prefWidth="634.0">
+              <columns>
+                <TableColumn fx:id="titulo" prefWidth="94.39999234676361" text="TITULO" />
+                <TableColumn fx:id="profesor" prefWidth="95.20008087158203" text="PROFESOR" />
+                  <TableColumn fx:id="maximo" prefWidth="96.79998779296875" text="MAX ALUMNOS" />
+                  <TableColumn fx:id="aula" minWidth="0.0" prefWidth="79.20001220703125" text="AULA" />
+                  <TableColumn fx:id="inicio" prefWidth="105.60003662109375" text="F.INICIO" />
+                  <TableColumn fx:id="fin" prefWidth="100.00003051757812" text="F.FIN" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="anyadir" mnemonicParsing="false" onAction="#anyadirCurso" text="AÑADIR">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="borrar" mnemonicParsing="false" onAction="#borrarCurso" text="BORRAR" />
+         </children>
+      </HBox>
+   </bottom>
+   <padding>
+      <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+   </padding>
+</BorderPane>

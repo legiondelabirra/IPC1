@@ -20,10 +20,7 @@ public class Academia extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        //WindowManager.createAlumnoWindow();
-        for (Alumno a : Database.getInstance().getAllAlumnos()) {
-            System.out.println(a.getDni());
-        }
+        WindowManager.createMainMenu();
     }
 
     /**
