@@ -61,14 +61,14 @@
             <Button mnemonicParsing="false" text="Cancelar" />
          </children>
          <BorderPane.margin>
-            <Insets bottom="50.0" left="50.0" right="50.0" />
+            <Insets left="50.0" right="50.0" />
          </BorderPane.margin>
       </HBox>
    </bottom>
    <right>
       <VBox alignment="CENTER" spacing="25.0" BorderPane.alignment="TOP_CENTER">
          <children>
-            <TextField fx:id="dniNuevo" VBox.vgrow="ALWAYS">
+            <TextField fx:id="dniNuevo" onKeyTyped="#onEdad" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -94,7 +94,7 @@
                </VBox.margin>
             </DatePicker>
             <Button fx:id="anyadirFotoNuevo" mnemonicParsing="false" onAction="#anyadirFoto" text="Añadir Foto" />
-            <ImageView fx:id="foto" fitHeight="113.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="foto" fitHeight="87.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
                <VBox.margin>
                   <Insets />
                </VBox.margin></ImageView>

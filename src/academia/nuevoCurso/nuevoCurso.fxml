@@ -30,7 +30,7 @@
                         <Insets top="5.0" />
                      </HBox.margin>
                   </VBox>
-                  <VBox prefHeight="288.0" prefWidth="206.0" spacing="10.0">
+                  <VBox onKeyTyped="#onEdad" prefHeight="288.0" prefWidth="206.0" spacing="10.0">
                      <children>
                         <TextField fx:id="titulo">
                            <VBox.margin>
@@ -38,10 +38,10 @@
                            </VBox.margin>
                         </TextField>
                         <TextField fx:id="profesor" />
-                        <TextField fx:id="maxAlumnos" />
+                        <TextField fx:id="maxAlumnos" onKeyTyped="#onEdad" />
                         <DatePicker fx:id="fechaIni" />
                         <DatePicker fx:id="fechaFin" />
-                        <TextField fx:id="hora" />
+                        <TextField fx:id="hora" onKeyTyped="#onEdad" />
                         <TextField fx:id="aula" />
                      </children>
                      <HBox.margin>

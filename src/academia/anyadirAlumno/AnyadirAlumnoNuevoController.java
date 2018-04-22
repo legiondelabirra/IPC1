@@ -69,7 +69,12 @@ public class AnyadirAlumnoNuevoController implements Initializable {
 
     @FXML
     private void aceptar(ActionEvent event) {
-
+        if(fechaAltaNuevo.getValue() == null || dniNuevo.getText() == null || nombreNuevo.getText() == null 
+                    || edadnuevo.getText() == null || direccionNuevo.getText() == null || foto.getImage() == null){
+            Alert a = new Alert(Alert.AlertType.INFORMATION, "Es necesario que todos los campos esten rellenados correctamente", ButtonType.OK);
+            a.show();
+            
+        }else {
         LocalDate s = fechaAltaNuevo.getValue();
 
         Alumno alumno = new Alumno(dniNuevo.getText(), nombreNuevo.getText(), Integer.parseInt(edadnuevo.getText()), direccionNuevo.getText(),
@@ -80,6 +85,7 @@ public class AnyadirAlumnoNuevoController implements Initializable {
         a.show();
         closeWindow();
         ventanaAlumno.refresh();
+        }
     }
 
     @FXML

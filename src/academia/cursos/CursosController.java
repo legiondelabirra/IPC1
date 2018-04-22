@@ -22,6 +22,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import modelo.Alumno;
 import modelo.Curso;
 import utils.Database;
@@ -103,8 +104,10 @@ public class CursosController implements Initializable {
              Alert a = new Alert(Alert.AlertType.INFORMATION, "Curso Borrado Correctamente", ButtonType.OK);
             a.show();
         }else{
+             Alert a = new Alert(Alert.AlertType.INFORMATION, "Curso Con Alumnos Matriculados", ButtonType.OK);
+            a.show();
             // alert
         }
     }
-
+   
 }

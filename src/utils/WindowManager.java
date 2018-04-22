@@ -11,12 +11,16 @@ import academia.cursos.CursosController;
 import academia.matriculas.MatriculasController;
 import academia.nuevoCurso.NuevoCursoController;
 import academia.anyadirAlumno.AnyadirAlumnoNuevoController;
+import academia.listarAlumnoCurso.ListaAlumnoCursoController;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import jdk.nashorn.internal.runtime.regexp.JoniRegExp.Factory;
+import modelo.Curso;
 
 /**
  *
@@ -33,11 +37,25 @@ public class WindowManager {
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setTitle("Menu Principal");
+            stage.setOnCloseRequest((WindowEvent event) -> {
+                new Thread(() -> Database.getInstance().salvar()).start();
+            });
             stage.setScene(scene);
             //stage.setMaxHeight(600);
             //stage.setMaxWidth(600);
             stage.setMinHeight(600);
             stage.setMinWidth(400);
+            
+            stage.widthProperty().addListener((obs, oldVal, newVal) -> {
+                System.out.println("Width: " + newVal);
+                System.out.println("Height: " + stage.getHeight());
+                System.out.println("------------------------------");
+            });
+            stage.heightProperty().addListener((obs, oldVal, newVal) -> {
+                System.out.println("Width: " + stage.getWidth());
+                System.out.println("Height: " + newVal);
+                System.out.println("------------------------------");
+            });
             
             //stage.setResizable(false);
             stage.initModality(Modality.APPLICATION_MODAL);
@@ -148,6 +166,27 @@ public class WindowManager {
             stage.setScene(scene);
             stage.setMinHeight(600);
             stage.setMinWidth(400);
+            // stage.setResizable(false);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return con;
+    }
+     public static ListaAlumnoCursoController createListaAlumnoCursoWindow(Curso c) {
+        ListaAlumnoCursoController con = null;
+        try {
+            FXMLLoader myLoader = new FXMLLoader(Object.class.getResource("/academia/listarAlumnoCurso/listaAlumnoCurso.fxml"));
+            Parent root = (Parent) myLoader.load();
+            con = myLoader.<ListaAlumnoCursoController>getController();
+            con.init(c);
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setTitle("Ventana Lista Alumnos By Curso");
+            stage.setScene(scene);
+            stage.setMinHeight(601);
+            stage.setMinWidth(608);
             // stage.setResizable(false);
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.show();

@@ -6,21 +6,23 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="academia.matriculas.MatriculasController">
    <center>
       <HBox alignment="BOTTOM_CENTER" prefHeight="400.0" prefWidth="173.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#borrarMatricula" prefHeight="26.0" prefWidth="78.0" text="Borrar">
-               <HBox.margin>
-                  <Insets right="10.0" />
-               </HBox.margin></Button>
-            <Button mnemonicParsing="false" onAction="#matricular" text="Matricular " />
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+               <children>
+                  <Button fx:id="botonMatricular" mnemonicParsing="false" onAction="#matricular" text="Matricular " />
+                  <Button fx:id="botonConsultar" mnemonicParsing="false" onAction="#consultarAlumnos" text="Consultar" />
+               </children>
+            </VBox>
          </children>
       </HBox>
    </center>
    <left>
-      <TableView fx:id="tablaAlumnos" prefHeight="400.0" prefWidth="210.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="tablaAlumnos" prefHeight="350.0" prefWidth="190.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="dniMatricula" prefWidth="94.4000244140625" text="DNI" />
           <TableColumn fx:id="nombreMatricula" prefWidth="104.79998779296875" text="Nombre" />
@@ -28,11 +30,23 @@
       </TableView>
    </left>
    <right>
-      <TableView fx:id="tablaCursos" prefHeight="400.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-        <columns>
-          <TableColumn fx:id="tituloMatricula" prefWidth="208.7999877691269" text="Título" />
-        </columns>
-      </TableView>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox>
+               <children>
+                  <VBox>
+                     <children>
+                        <TableView fx:id="tablaCursos" prefHeight="350.0" prefWidth="182.0">
+                          <columns>
+                            <TableColumn fx:id="tituloMatricula" prefWidth="208.7999877691269" text="Título" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
    </right>
    <padding>
       <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />

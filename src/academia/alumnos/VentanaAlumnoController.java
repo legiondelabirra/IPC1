@@ -11,6 +11,8 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.beans.binding.Binding;
+import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -61,7 +63,12 @@ public class VentanaAlumnoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         refresh();
         
-        // TODO
+        anyadirAlumno.disableProperty().bind(
+                Bindings.equal(-1, 
+                        listaAlumnos.getSelectionModel().selectedIndexProperty()));
+        borrar.disableProperty().bind(
+                Bindings.equal(-1, 
+                        listaAlumnos.getSelectionModel().selectedIndexProperty()));
     }
 
     @FXML
@@ -73,6 +80,9 @@ public class VentanaAlumnoController implements Initializable {
             Alert a = new Alert(Alert.AlertType.INFORMATION, "Alumno Borrado Correctamente", ButtonType.OK);
             a.show();
         }else{
+            Alert a = new Alert(Alert.AlertType.INFORMATION, "El Alumno Esta Matriculado De Algun Curso", ButtonType.OK);
+            a.show();
+            
             // alert
         }
         
